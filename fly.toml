@@ -1,0 +1,12 @@
+app = 'miraibuilder'
+primary_region = 'nrt'
+
+[build]
+
+[mounts]
+  source = "data"
+  destination = "/data"
+  initial_size = "20gb"
+
+[[vm]]
+  size = 'performance-16x'
