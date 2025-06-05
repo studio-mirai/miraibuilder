@@ -58,5 +58,5 @@ IFS=',' read -ra BINS <<< "$BINARIES"
 for bin in "${BINS[@]}"; do
   CARGO_CMD+=" --bin $bin"
   mv /data/release/$bin /data/upload/$bin
-  s5cmd --endpoint-url $AWS_ENDPOINT_URL  cp '/data/upload/*' s3://$AWS_BUCKET_NAME/$COMMIT
+  s5cmd --endpoint-url $AWS_ENDPOINT_URL  cp '/data/upload/*' s3://$COMMIT/
 done
