@@ -15,7 +15,8 @@ The following environment variables are required:
 3. `AWS_REGION` - Region for an S3 bucket.
 4. `AWS_SECRET_ACCESS_KEY` - Credential for uploading binaires to an S3 bucket.
 5. `BINARIES` - A comma-separated string of the binaries to build.
-6. `REPO_URL` - GitHub repo containing the source code to build.
+6. `COMMIT` - The commit to use for the build.
+7. `REPO_URL` - GitHub repo containing the source code to build.
 
 ```
 fly machine run <IMAGE> \
@@ -24,6 +25,7 @@ fly machine run <IMAGE> \
     --env AWS_REGION=<AWS_REGION> \
     --env AWS_SECRET_ACCESS_KEY=<AWS_SECRET_ACCESS_KEY> \
     --env BINARIES=sui,sui-bridge,sui-node,sui-tool \
+    --env COMMIT=62b9f371e37e618b7048417e2d232d6cd678c967 \
     --env REPO_URL=https://github.com/mystenlabs/sui.git \
     --vm-size performance-16x \
     --volume <VOLUME_ID>:/data \

@@ -23,5 +23,4 @@ RUN rm /tmp/s5cmd.tar.gz
 COPY build.sh /app/build.sh
 RUN chmod +x /app/build.sh
 
-# CMD ["bash", "/app/build.sh"]
-CMD ["tail", "-f", "/dev/null"]
+CMD ["bash", "/app/build.sh"]
