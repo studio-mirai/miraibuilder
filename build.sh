@@ -59,4 +59,4 @@ for bin in "${BINS[@]}"; do
   mv /data/release/$bin /data/upload/$bin
 done
 
-s5cmd --endpoint-url $AWS_ENDPOINT_URL  cp '/data/upload/*' s3://$COMMIT/
+s5cmd --endpoint-url $AWS_ENDPOINT_URL  cp '/data/upload/*' s3://$(basename -s .git $REPO_URL)/$COMMIT/
